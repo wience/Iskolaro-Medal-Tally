@@ -13,7 +13,33 @@
 
     <!-- Style css -->
     <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYe8A7izZNEUtkwD4sNkql0_xCL5cbWN0",
+            authDomain: "iskolaro.firebaseapp.com",
+            projectId: "iskolaro",
+            storageBucket: "iskolaro.appspot.com",
+            messagingSenderId: "106967689733",
+            appId: "1:106967689733:web:c4127257f9a45579eaca6c",
+            measurementId: "G-9XBLM1CECS"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+
+        // Export the database for use in other modules
+        window.db = db;
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
 </head>
 
 <body>

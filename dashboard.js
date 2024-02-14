@@ -76,4 +76,3 @@ schools.forEach(school => {
         }
     });
 });
-

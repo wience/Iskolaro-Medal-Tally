@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBYe8A7izZNEUtkwD4sNkql0_xCL5cbWN0",
+          authDomain: "iskolaro.firebaseapp.com",
+          projectId: "iskolaro",
+          storageBucket: "iskolaro.appspot.com",
+          messagingSenderId: "106967689733",
+          appId: "1:106967689733:web:c4127257f9a45579eaca6c",
+          measurementId: "G-9XBLM1CECS"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+      
+        // Export the database for use in other modules
+        window.db = db;
+      </script>
+</head>
+<body>
+    <table id="tallyTable">
+        <thead>
+            <tr>
+                <th>Medal</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="./dashboard.js" type="module"></script>
+</body>
+
+<style>
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    button {
+        margin: 0 5px;
+    }
+</style>
+
+</html>

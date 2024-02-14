@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intramural Medal Tally</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
 </head>
-
 <body>
-    <h1>Intramural Medal Tally</h1>
-    <div id="medalTally"></div>
-    <button onclick="redirectToScoremalds()">Go to Scoremalds</button>
-    <script src="medalTally.json" defer></script>
-    <script src="script.js" defer></script>
+    <h2>Login</h2>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button type="button" onclick="login()">Login</button>
 
+    <script>
+        function login() {
+            const password = document.getElementById('password').value;
+            // Example password check (this is not secure!)
+            if(password === "ilovedebmac") {
+                localStorage.setItem('authenticated', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Incorrect password');
+            }
+        }
+    </script>
 </body>
-
-<script>
-    function redirectToScoremalds() {
-        // Redirects the user to scoremalds.html
-        window.location.href = 'scoreboard.html';
-    }
-</script>
-
 </html>
